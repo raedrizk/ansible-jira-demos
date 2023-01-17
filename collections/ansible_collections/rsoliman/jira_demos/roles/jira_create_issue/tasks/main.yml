@@ -1,0 +1,19 @@
+---
+- name: Create an issue
+  community.general.jira:
+    uri: "{{ jira_server }}"
+    username: "{{ jira_username }}"
+    password: "{{ jira_token }}"
+    project: "{{ jira_project }}"
+    validate_certs: false
+    operation: create
+    summary: "{{ jira_ticket_summary }}"
+    description: "{{ jira_ticket_description }}"
+    issuetype: Task
+  register: issue
+
+- name: setting stats
+  ansible.builtin.set_stats:
+    data:
+      jira_issue_id: "{{ issue.meta.key | default('JIRA_ISSUE') }}"
+  when: issue.meta.key is defined

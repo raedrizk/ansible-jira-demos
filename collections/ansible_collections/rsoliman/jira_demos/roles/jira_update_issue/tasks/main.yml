@@ -1,0 +1,10 @@
+---
+- name: Add a Comment on jira Issue
+  community.general.jira:
+    uri: "{{ jira_server }}"
+    username: "{{ jira_username }}"
+    token: "{{ jira_token }}"
+    project: "{{ jira_project }}"
+    issue: "{{ jira_issue_id }}"
+    operation: comment
+    comment: "{{ jira_ticket_comment }}"

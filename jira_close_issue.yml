@@ -1,0 +1,9 @@
+---
+- name: Close a Jira Issue
+  hosts: all
+  gather_facts: false
+  roles:
+    - rsoliman.jira_demos.jira_close_issue
+
+
+

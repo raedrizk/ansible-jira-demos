@@ -1,0 +1,6 @@
+---
+# vars file for jira-close-issue
+jira_server: "{{ jira_server_choice | default('http://demo.servicedesk.com:8080') }}"
+jira_username: "{{ jira_username_choice | default('rr') }}"
+jira_token: "{{ jira_token_choice | default('tokentoken') }}"
+jira_project: "{{ jira_project_choice | default('ANSIBLE') }}"

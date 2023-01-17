@@ -1,0 +1,24 @@
+---
+ansible-navigator:
+  ansible:
+    inventory:
+      entries:
+      - ./inventory
+  editor:
+    command: code -g {filename}:{line_number}
+    console: false
+  execution-environment:
+    container-engine: podman
+    enabled: true
+    image: localhost/foxhound-demos-ee:latest
+    #image: registry.redhat.io/ansible-automation-platform-22/ee-29-rhel8
+    pull:
+      policy: never
+  logging:
+    append: true
+    file: ./logs/ansiblerun.log
+    level: critical
+  mode: interactive
+  playbook-artifact:
+    enable: true
+    save-as: ./artifacts/{playbook_name}-artifact-{time_stamp}.json
