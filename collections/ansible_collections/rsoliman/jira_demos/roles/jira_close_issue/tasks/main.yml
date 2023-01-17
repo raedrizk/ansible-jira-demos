@@ -8,4 +8,4 @@
     validate_certs: false
     issue: "{{ jira_issue_id }}" 
     operation: transition
-    status: Close Issue
+    status: Mark as done
